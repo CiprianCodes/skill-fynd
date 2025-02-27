@@ -120,9 +120,39 @@ body {
   transform: translateY(-3px);
 }
 
+/* Add overflow protection for all screen sizes */
+html, body {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* Custom container class to support very small screens */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 639px) {
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 html {

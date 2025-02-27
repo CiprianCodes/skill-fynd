@@ -23,8 +23,8 @@ export default function Home() {
     <div className={`${geistSans.variable} ${geistMono.variable}`}>
       <Layout>
         <Head>
-          <title>Elite Fynd | Connecting Top Talent with Innovative Companies</title>
-          <meta name="description" content="Elite Fynd specializes in identifying and placing exceptional professionals who drive business success and innovation." />
+          <title>Skill Fynd | Connecting Top Talent with Innovative Companies</title>
+          <meta name="description" content="Skill Fynd specializes in identifying and placing exceptional professionals who drive business success and innovation." />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" />
         </Head>

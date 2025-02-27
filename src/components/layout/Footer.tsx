@@ -95,7 +95,7 @@ const Footer: React.FC = () => {
         
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
           <p className="text-white/50 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Elite Fynd. All rights reserved.
+            &copy; {new Date().getFullYear()} Skill Fynd. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <span className="text-white/50 text-sm hover:text-white transition-colors cursor-pointer">

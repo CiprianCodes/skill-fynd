@@ -23,7 +23,7 @@ const HeroSection: React.FC = () => {
             Connecting Top Talent with <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">Innovative Companies</span>
           </h1>
           <p className="text-lg md:text-xl mb-8 text-white/70">
-            Elite Fynd specializes in identifying and placing exceptional professionals 
+            Skill Fynd specializes in identifying and placing exceptional professionals 
             who drive business success and innovation.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">

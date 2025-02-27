@@ -8,8 +8,8 @@ interface LogoIconProps {
 
 const LogoIcon: React.FC<LogoIconProps> = ({ 
   className = 'mr-2', 
-  width = 36, 
-  height = 36 
+  width = 30, 
+  height = 30 
 }) => {
   return (
     <svg

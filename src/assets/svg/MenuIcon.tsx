@@ -4,12 +4,14 @@ interface MenuIconProps {
   className?: string;
   isOpen?: boolean;
   style?: React.CSSProperties;
+  onClick?: (e: React.MouseEvent<SVGSVGElement>) => void;
 }
 
 const MenuIcon: React.FC<MenuIconProps> = ({ 
   className = "w-6 h-6 transition-transform duration-300", 
   isOpen = false,
-  style = {} 
+  style = {},
+  onClick
 }) => {
   return (
     <svg 
@@ -19,6 +21,10 @@ const MenuIcon: React.FC<MenuIconProps> = ({
       stroke="currentColor" 
       className={className}
       style={style}
+      onClick={(e) => {
+        e.preventDefault(); // Prevent default behavior
+        if (onClick) onClick(e);
+      }}
     >
       {isOpen ? (
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

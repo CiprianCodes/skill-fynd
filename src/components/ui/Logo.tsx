@@ -19,8 +19,8 @@ const Logo: React.FC<LogoProps> = ({
         <LogoIcon />
         
         {withText && (
-          <div className={`font-bold text-xl ${textColor}`}>
-            Elite <span className="font-extrabold">Fynd</span>
+          <div className={`font-bold text-sm sm:text-xl ${textColor}`}>
+            Skill <span className="font-extrabold">Fynd</span>
           </div>
         )}
       </div>

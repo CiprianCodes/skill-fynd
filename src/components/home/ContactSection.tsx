@@ -89,7 +89,7 @@ const ContactSection: React.FC = () => {
                 <div>
                   <h4 className="font-semibold text-white">Address</h4>
                   <p className="mt-1 text-white/70">123 Recruitment Street</p>
-                  <p className="text-white/70">Elite City, TC 12345</p>
+                  <p className="text-white/70">Skill City, TC 12345</p>
                 </div>
               </div>
               
@@ -100,8 +100,8 @@ const ContactSection: React.FC = () => {
                 <div>
                   <h4 className="font-semibold text-white">Email</h4>
                   <p className="mt-1">
-                    <a href="mailto:info@elitefynd.com" className="text-white/70 hover:text-purple-300 transition-colors">
-                      info@elitefynd.com
+                    <a href="mailto:info@skillfynd.com" className="text-white/70 hover:text-purple-300 transition-colors">
+                      info@skillfynd.com
                     </a>
                   </p>
                 </div>

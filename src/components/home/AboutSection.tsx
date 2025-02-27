@@ -17,9 +17,9 @@ const AboutSection: React.FC = () => {
           <div className="inline-block bg-purple-600/10 backdrop-blur-sm px-4 py-1 rounded-full mb-4 border border-purple-500/20">
             <span className="text-purple-300 text-sm font-medium">About Us</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Our Approach to Elite Acquisition</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Our Approach to Skill Acquisition</h2>
           <p className="text-lg text-white/70">
-            At Elite Fynd, we go beyond traditional recruiting. We combine industry expertise, cutting-edge technology, 
+            At Skill Fynd, we go beyond traditional recruiting. We combine industry expertise, cutting-edge technology, 
             and a personalized approach to connect exceptional talent with innovative companies.
           </p>
         </AnimateOnScroll>
