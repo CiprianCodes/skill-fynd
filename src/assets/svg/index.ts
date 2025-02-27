@@ -1,0 +1,13 @@
+export { default as SpinnerIcon } from './SpinnerIcon';
+export { default as LocationIcon } from './LocationIcon';
+export { default as EmailIcon } from './EmailIcon';
+export { default as PhoneIcon } from './PhoneIcon';
+export { default as LogoIcon } from './LogoIcon';
+export { default as QuoteIcon } from './QuoteIcon';
+export { default as MenuIcon } from './MenuIcon';
+export { default as GridPattern } from './GridPattern';
+export { default as WavePattern } from './WavePattern';
+export { default as TwitterIcon } from './TwitterIcon';
+export { default as LinkedInIcon } from './LinkedInIcon';
+export { default as GitHubIcon } from './GitHubIcon';
+export { default as FooterGridPattern } from './FooterGridPattern';

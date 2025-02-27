@@ -1,40 +1,157 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Skill Fynd - Professional Skill Acquisition Platform
+
+Skill Fynd is a modern skill acquisition platform connecting exceptional candidates with innovative companies. Built with Next.js and React, this application features a sleek, responsive design with smooth animations and optimized performance.
+
+![Skill Fynd Homepage](screenshots/homepage.png)
+<!-- Add your screenshot here -->
+
+## Features
+
+- **Modern UI/UX Design**: Clean and professional interface with smooth animations
+- **Responsive Layout**: Fully responsive design that works seamlessly across all devices
+- **Performance Optimized**: Minimized render blocking and optimized asset loading
+- **Maintainable Code Structure**: Well-organized component hierarchy and folder structure
+- **Reusable Components**: Library of custom UI components for consistent design
+- **SVG Optimization**: Dedicated SVG component system for better performance and maintainability
+
+## Technology Stack
+
+- **Frontend Framework**: Next.js
+- **UI Library**: React
+- **Styling**: Tailwind CSS
+- **Animation**: CSS transitions and custom animation hooks
+- **Icons**: Custom SVG components and react-icons
+- **Development**: TypeScript for type safety
+
+## Screenshots
+
+### Homepage
+![Homepage](screenshots/homepage.png)
+
+### Services
+![Services Section](screenshots/services.png)
+<!-- Add your screenshot here -->
+
+### About Us
+![About Section](screenshots/about.png)
+<!-- Add your screenshot here -->
+
+### Testimonials
+![Testimonials Section](screenshots/testimonials.png)
+<!-- Add your screenshot here -->
+
+### Contact
+![Contact Section](screenshots/contact.png)
+<!-- Add your screenshot here -->
+
+## Project Structure
+
+```
+skill-fynd-app/
+├── public/           # Static assets and images
+├── src/              # Source code
+│   ├── assets/       # Project assets
+│   │   └── svg/      # SVG components
+│   ├── components/   # React components
+│   │   ├── home/     # Homepage section components
+│   │   ├── layout/   # Layout components (Header, Footer)
+│   │   └── ui/       # Reusable UI components
+│   ├── data/         # Mock data and content
+│   │   └── mock/     # Mock data files
+│   ├── pages/        # Next.js pages
+│   ├── styles/       # Global styles
+│   └── utils/        # Utility functions
+└── tailwind.config.js # Tailwind CSS configuration
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 14.0 or later
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/CiprianCodes/skill-fynd.git
+cd skill-fynd-app
+```
+
+2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Key Code Features
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### SVG Components
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+We've implemented a dedicated SVG component system for better performance and maintainability:
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```tsx
+// Example of an SVG component
+import React from 'react';
 
-## Learn More
+interface LogoIconProps {
+  className?: string;
+}
 
-To learn more about Next.js, take a look at the following resources:
+const LogoIcon: React.FC<LogoIconProps> = ({ className = "w-6 h-6" }) => {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none">
+      {/* SVG paths */}
+    </svg>
+  );
+};
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+export default LogoIcon;
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Smooth Scrolling
 
-## Deploy on Vercel
+We use a custom SmoothScroll component that handles smooth scrolling with a modern React approach:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```tsx
+// SmoothScroll component
+const SmoothScroll: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    // Scroll logic here
+  };
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+  return <div onClick={handleClick}>{children}</div>;
+};
+```
+
+## Deployment
+
+The project can be easily deployed on Vercel:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/CiprianCodes/skill-fynd)
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgements
+
+- [Next.js](https://nextjs.org)
+- [React](https://reactjs.org)
+- [Tailwind CSS](https://tailwindcss.com)
+- [React Icons](https://react-icons.github.io/react-icons/)
