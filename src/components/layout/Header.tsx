@@ -1,41 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Logo from '../ui/Logo';
 import Button from '../ui/Button';
 import MobileMenuSimple from '../mobile/MobileMenuSimple';
 
 const Header: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  // Handle scroll and update header appearance
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Set CSS variable for header height
-  useEffect(() => {
-    document.documentElement.style.setProperty(
-      '--header-height', 
-      isScrolled ? '64px' : '80px'
-    );
-  }, [isScrolled]);
+  const headerClass = 'fixed w-full z-40 transition-all duration-300 bg-black/40 backdrop-blur-sm py-3 sm:py-4';
 
   return (
     <>
-      <header 
-        className={`fixed w-full z-40 transition-all duration-300 ${
-          isScrolled ? 'py-2 bg-card/80 backdrop-blur-md' : 'py-3 sm:py-6 bg-transparent'
-        }`}
-      >
+      <header className={headerClass}>
         <div className="container mx-auto px-3 sm:px-4 flex justify-between items-center">
           <Logo textColor="text-white" />
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8 items-center">
             <Link href="/" className="text-white/80 hover:text-white transition-colors relative group">
               Home
@@ -64,8 +41,11 @@ const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Standalone Mobile Menu - completely separate from header */}
-      <MobileMenuSimple />
+      <div className="h-[80px] transition-all duration-300"></div>
+      
+      <div className="md:hidden">
+        <MobileMenuSimple />
+      </div>
     </>
   );
 };

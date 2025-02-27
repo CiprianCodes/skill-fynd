@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC } from 'react';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -19,53 +19,34 @@ const navItems: NavItem[] = [
 ];
 
 const MobileMenu: FC<MobileMenuProps> = ({ isOpen, onClose, onToggle }) => {
-  // Lock body scroll when menu is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isOpen]);
+  const bodyClass = isOpen ? 'overflow-hidden' : '';
 
   const handleNavItemClick = (href: string, e: React.MouseEvent) => {
-    e.preventDefault(); // Prevent default anchor behavior
-    e.stopPropagation(); // Stop event bubbling
+    e.preventDefault();
+    e.stopPropagation(); 
     
     onClose();
     
-    // For hash links, handle scrolling manually after menu closes
     if (href.startsWith('#')) {
       setTimeout(() => {
-        const element = document.querySelector(href);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
+        window.location.hash = href.substring(1);
       }, 300);
     }
   };
 
-  // Safe click handler for contact button
   const handleContactClick = (e: React.MouseEvent) => {
-    e.preventDefault(); // Prevent default behavior
-    e.stopPropagation(); // Stop event bubbling
+    e.preventDefault();
+    e.stopPropagation();
     
     onClose();
+    
     setTimeout(() => {
-      const contactSection = document.querySelector('#contact');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-      }
+      window.location.hash = 'contact';
     }, 300);
   };
   
   return (
-    <>
-      {/* Hamburger Button - using div instead of button */}
+    <div className={bodyClass}>
       <div className="md:hidden fixed top-4 right-4 w-12 h-12">
         <div
           role="button"
@@ -75,7 +56,7 @@ const MobileMenu: FC<MobileMenuProps> = ({ isOpen, onClose, onToggle }) => {
             e.preventDefault();
             e.stopPropagation();
             onToggle();
-            return false; // Try to prevent any default action
+            return false;
           }}
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') {
@@ -106,7 +87,6 @@ const MobileMenu: FC<MobileMenuProps> = ({ isOpen, onClose, onToggle }) => {
         </div>
       </div>
       
-      {/* Overlay */}
       <div 
         className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-500 md:hidden ${
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
@@ -122,13 +102,11 @@ const MobileMenu: FC<MobileMenuProps> = ({ isOpen, onClose, onToggle }) => {
         }}
       />
 
-      {/* Menu panel */}
       <div 
         className={`fixed inset-x-0 top-[calc(var(--header-height,64px))] h-[calc(100vh-var(--header-height,64px))] bg-card/90 backdrop-blur-md shadow-lg z-50 transform transition-all duration-500 md:hidden ${
           isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
         }`}
       >
-        {/* Decorative top highlight */}
         <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent"></div>
         
         <div className="container mx-auto px-6 py-8 flex flex-col h-full">
@@ -179,7 +157,7 @@ const MobileMenu: FC<MobileMenuProps> = ({ isOpen, onClose, onToggle }) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

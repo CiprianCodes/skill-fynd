@@ -6,6 +6,8 @@
 
 Skill Fynd is a cutting-edge, fully responsive landing page template designed for recruitment, talent acquisition, and professional services businesses. Built with scalability and performance in mind, this template features a sleek, professional design that can be easily customized to match your brand.
 
+🔗 **Live Demo:** [https://skill-fynd-ximu.vercel.app/](https://skill-fynd-ximu.vercel.app/)
+
 ## ✨ Key Features
 
 - **Optimized for Conversion**: Strategically designed sections guide visitors toward calls-to-action
@@ -25,6 +27,19 @@ Skill Fynd is a cutting-edge, fully responsive landing page template designed fo
 - **SVG Asset System**: Optimized vector graphics for crisp visuals at any resolution
 - **CSS Animations**: Performant transitions and animations with minimal JavaScript
 - **Optimized Asset Loading**: Strategic loading of resources for improved web vitals
+- **Static Site Generation (SSG)**: Pre-rendered pages for lightning-fast loading times
+- **Incremental Static Regeneration (ISR)**: Dynamic content that stays fresh without sacrificing performance
+
+## 🚀 Performance Optimizations
+
+- **Server-Side Rendering**: Faster initial page loads and improved SEO
+- **Image Optimization**: Automatic WebP/AVIF format conversion and responsive sizing
+- **CSS Optimization**: Minimal JavaScript for animations, leveraging CSS capabilities
+- **Metadata Management**: Comprehensive SEO meta tags and structured data
+- **Automated Sitemap Generation**: Dynamic sitemap.xml for improved search engine indexing
+- **Web Vitals Focus**: Optimized for Core Web Vitals metrics
+- **No Direct DOM Manipulation**: Clean React state management for better performance
+- **Preconnect Optimization**: Faster resource loading with DNS preconnect
 
 ## 📱 Responsive Design
 
@@ -36,6 +51,22 @@ The template is meticulously tested across a wide range of devices:
 - Tablet (768px)
 - Laptop (1024px)
 - Desktop (1440px+)
+
+## 📱 Mobile Menu
+
+The template includes a specially optimized mobile navigation menu that:
+
+- Uses minimal JavaScript for smooth animations
+- Preserves accessibility with proper ARIA attributes
+- Handles gestures for intuitive navigation
+- Adapts to various screen sizes automatically
+
+## 📈 Performance Optimization
+
+- SVG optimization for crisp icons at any resolution
+- Code splitting for reduced initial load time
+- Strategic use of CSS instead of JavaScript for animations
+- Responsive image loading with next/image
 
 ## 📂 Project Structure
 
@@ -69,8 +100,8 @@ skill-fynd-template/
 
 1. Clone the repository
 ```bash
-git clone https://github.com/YourUsername/skill-fynd-template.git
-cd skill-fynd-template
+git clone https://github.com/CiprianCodes/skill-fynd.git
+cd skill-fynd
 ```
 
 2. Install dependencies
@@ -88,6 +119,41 @@ yarn dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) to see your running application
+
+### Building for Production
+
+To create an optimized production build with server-side rendering:
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+This process will:
+- Pre-render pages using Static Site Generation (SSG)
+- Apply image optimization
+- Minimize CSS and JavaScript
+- Generate the sitemap and other SEO assets
+
+### Deployment
+
+The application is optimized for deployment on Vercel:
+
+```bash
+npm install -g vercel
+vercel
+```
+
+For other hosting platforms, use the standard Next.js deployment:
+
+```bash
+# First build the application
+npm run build
+
+# Then start the production server
+npm start
+```
 
 ## 🎨 Customization Guide
 
@@ -112,14 +178,26 @@ The modular component structure makes it easy to add new sections:
 1. Create a new component in `src/components/home/`
 2. Import and add it to the page layout in `src/pages/index.tsx`
 
-## 📱 Mobile Menu
+## 📸 Screenshots
 
-The template includes a specially optimized mobile navigation menu that:
+### Homepage
+![Homepage](screenshots/homepage.png)
 
-- Uses minimal JavaScript for smooth animations
-- Preserves accessibility with proper ARIA attributes
-- Handles gestures for intuitive navigation
-- Adapts to various screen sizes automatically
+### About Section
+![About Section](screenshots/about.png)
+
+### Services Section
+![Services Section](screenshots/services.png)
+
+### Testimonials Section
+![Testimonials Section](screenshots/testimonials.png)
+
+### Contact Section
+![Contact Section](screenshots/contact.png)
+
+## 📱 Mobile Views
+![Mobile Navigation](screenshots/mobile-nav.png)
+![Mobile Homepage](screenshots/mobile-home.png)
 
 ## 📈 Performance Optimization
 
@@ -130,16 +208,15 @@ The template includes a specially optimized mobile navigation menu that:
 
 ## 📄 License
 
-This template is available for commercial and personal use. Please refer to the LICENSE file for details.
+This template is available for commercial and personal use.
 
 ## 📞 Support
 
-For questions, customization requests, or support:
+For questions or customization requests:
 
-- Email: your.email@example.com
-- Twitter: [@YourTwitterHandle](https://twitter.com/YourTwitterHandle)
-- GitHub Issues: [Report a bug](https://github.com/YourUsername/skill-fynd-template/issues)
+- GitHub Repository: [https://github.com/CiprianCodes/skill-fynd](https://github.com/CiprianCodes/skill-fynd)
+- Live Demo: [https://skill-fynd-ximu.vercel.app/](https://skill-fynd-ximu.vercel.app/)
 
 ---
 
-© 2023 Your Name/Company. All rights reserved.
+© 2025 CiprianCodes. All rights reserved.

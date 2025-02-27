@@ -25,14 +25,12 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   const baseClasses = 'inline-flex items-center justify-center font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500';
   
-  // Button sizes
   const sizes = {
     sm: 'py-1.5 px-3 text-xs',
     md: 'py-2 px-4 text-sm sm:text-base',
     lg: 'py-2.5 px-6 text-base sm:text-lg'
   };
 
-  // Button variants
   const variants = {
     primary: 'bg-purple-600 text-white hover:bg-purple-700 shadow-lg',
     secondary: 'bg-card text-white hover:bg-card-hover',

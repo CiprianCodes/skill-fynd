@@ -22,7 +22,7 @@ const MenuIcon: React.FC<MenuIconProps> = ({
       className={className}
       style={style}
       onClick={(e) => {
-        e.preventDefault(); // Prevent default behavior
+        e.preventDefault();
         if (onClick) onClick(e);
       }}
     >

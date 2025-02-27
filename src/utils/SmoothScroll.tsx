@@ -1,10 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
-/**
- * SmoothScroll component - handles smooth scrolling without using addEventListener
- * Uses React's component structure and onClick delegation pattern
- */
 const SmoothScroll: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const router = useRouter();
 
@@ -18,15 +14,9 @@ const SmoothScroll: React.FC<{ children: React.ReactNode }> = ({ children }) => 
       if (href?.startsWith('#')) {
         e.preventDefault();
         
-        const targetElement = document.querySelector(href);
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-          
-          router.push(router.pathname + href, undefined, { shallow: true });
-        }
+        window.location.hash = href.substring(1);
+        
+        router.push(router.pathname + href, undefined, { shallow: true });
       }
     }
   };

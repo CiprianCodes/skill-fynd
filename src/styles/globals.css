@@ -5,6 +5,11 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Enable smooth scrolling for the entire document */
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --background: #0a0a18;
   --foreground: #ffffff;
@@ -149,10 +154,6 @@ html, body {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
   }
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 html {
