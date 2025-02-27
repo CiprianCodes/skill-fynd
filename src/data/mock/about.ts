@@ -1,4 +1,4 @@
-import { HiOutlineLightBulb, HiOutlineUserGroup } from 'react-icons/hi';
+import { HiOutlineLightBulb } from 'react-icons/hi';
 import { IoShieldCheckmarkOutline } from 'react-icons/io5';
 
 export const aboutFeatures = [

@@ -59,7 +59,7 @@ const TestimonialsSection: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">What Our Clients Say</h2>
           <p className="text-lg text-white/70">
             We take pride in our ability to connect companies with exceptional talent that drives success.
-            Here's what some of our clients have to say about working with us.
+            Here&apos;s what some of our clients have to say about working with us.
           </p>
         </AnimateOnScroll>
         
@@ -95,7 +95,7 @@ const TestimonialsSection: React.FC = () => {
               </h3>
               <AnimateOnScroll animation="fade-up" delay={200}>
                 <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-                  Let us help you identify and attract the exceptional talent your organization needs to thrive in today's competitive landscape.
+                  Let us help you identify and attract the exceptional talent your organization needs to thrive in today&apos;s competitive landscape.
                 </p>
               </AnimateOnScroll>
               <AnimateOnScroll animation="fade-up" delay={300}>

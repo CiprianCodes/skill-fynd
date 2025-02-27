@@ -2,6 +2,8 @@
 
 Skill Fynd is a modern skill acquisition platform connecting exceptional candidates with innovative companies. Built with Next.js and React, this application features a sleek, responsive design with smooth animations and optimized performance.
 
+🚀 **Live Demo:** [https://skill-fynd.vercel.app](https://skill-fynd.vercel.app)
+
 ![Skill Fynd Homepage](screenshots/homepage.png)
 <!-- Add your screenshot here -->
 
@@ -137,7 +139,11 @@ const SmoothScroll: React.FC<{ children: React.ReactNode }> = ({ children }) => 
 
 ## Deployment
 
-The project can be easily deployed on Vercel:
+The project is deployed on Vercel:
+
+🔗 **Live site:** [https://skill-fynd.vercel.app](https://skill-fynd.vercel.app)
+
+You can deploy your own version by clicking the button below:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/CiprianCodes/skill-fynd)
 

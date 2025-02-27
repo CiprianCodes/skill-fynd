@@ -60,7 +60,7 @@ const HeroSection: React.FC = () => {
           <pre className="text-xs text-white/70 font-mono">
             <span className="text-purple-400">const</span> <span className="text-blue-400">findTalent</span> = <span className="text-purple-400">async</span> () =&gt; {'{'}<br/>
             &nbsp;&nbsp;<span className="text-blue-400">const</span> candidates = <span className="text-purple-400">await</span> talent.find({'{'}<br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;skills: [<span className="text-green-400">'react'</span>, <span className="text-green-400">'node'</span>],<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;skills: [<span className="text-green-400">&quot;react&quot;</span>, <span className="text-green-400">&quot;node&quot;</span>],<br/>
             &nbsp;&nbsp;&nbsp;&nbsp;experience: <span className="text-yellow-400">3</span><br/>
             &nbsp;&nbsp;{'}'});<br/>
             &nbsp;&nbsp;<span className="text-purple-400">return</span> candidates;<br/>
