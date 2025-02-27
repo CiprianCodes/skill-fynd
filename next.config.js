@@ -4,7 +4,10 @@ const nextConfig = {
   
   // Image optimization
   images: {
-    domains: ['images.unsplash.com', 'randomuser.me'], 
+    remotePatterns: [
+      { protocol: 'https', hostname: 'images.unsplash.com', port: '' },
+      { protocol: 'https', hostname: 'randomuser.me', port: '' },
+    ],
     formats: ['image/avif', 'image/webp'],
   },
   

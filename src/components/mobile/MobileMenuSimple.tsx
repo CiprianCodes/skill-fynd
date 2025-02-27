@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 const MobileMenuSimple = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   const navItems = [
     { label: 'Home', href: '/' },
@@ -17,8 +19,41 @@ const MobileMenuSimple = () => {
       setTimeout(() => {
         window.location.hash = href.substring(1);
       }, 10);
+    } else if (href === '/') {
+      // Handle home navigation - scroll to top and/or navigate to root
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (router.pathname !== '/') {
+          router.push('/');
+        }
+      }, 10);
     }
   };
+
+  // Control body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      // Prevent scrolling on the body when menu is open
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.height = '100%';
+    } else {
+      // Re-enable scrolling when menu is closed
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.height = '';
+    }
+
+    // Cleanup when component unmounts
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.height = '';
+    };
+  }, [isOpen]);
 
   return (
     <>

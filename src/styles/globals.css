@@ -5,9 +5,26 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* Enable smooth scrolling for the entire document */
-html {
-  scroll-behavior: smooth;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-feature-settings: "rlig" 1, "calt" 1;
+    transition: overflow 0.3s ease, position 0.3s ease;
+    color: var(--text-primary);
+    background-color: var(--background);
+    background-image: 
+      radial-gradient(circle at 25% 15%, rgba(139, 92, 246, 0.05) 0%, transparent 25%),
+      radial-gradient(circle at 75% 85%, rgba(139, 92, 246, 0.05) 0%, transparent 25%);
+    min-height: 100vh;
+  }
+  
+  /* Mobile menu open state helpers */
+  body.overflow-hidden {
+    overflow: hidden;
+  }
 }
 
 :root {
@@ -25,15 +42,6 @@ html {
   --text-accent: #d8b4fe;
   --border: #2d2d5b;
   --header-height: 64px;
-}
-
-body {
-  color: var(--text-primary);
-  background-color: var(--background);
-  background-image: 
-    radial-gradient(circle at 25% 15%, rgba(139, 92, 246, 0.05) 0%, transparent 25%),
-    radial-gradient(circle at 75% 85%, rgba(139, 92, 246, 0.05) 0%, transparent 25%);
-  min-height: 100vh;
 }
 
 /* Custom animations */

@@ -1,4 +1,5 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -20,6 +21,7 @@ const navItems: NavItem[] = [
 
 const MobileMenu: FC<MobileMenuProps> = ({ isOpen, onClose, onToggle }) => {
   const bodyClass = isOpen ? 'overflow-hidden' : '';
+  const router = useRouter();
 
   const handleNavItemClick = (href: string, e: React.MouseEvent) => {
     e.preventDefault();
@@ -30,6 +32,14 @@ const MobileMenu: FC<MobileMenuProps> = ({ isOpen, onClose, onToggle }) => {
     if (href.startsWith('#')) {
       setTimeout(() => {
         window.location.hash = href.substring(1);
+      }, 300);
+    } else if (href === '/') {
+      // Handle home navigation - scroll to top and/or navigate to root
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (router.pathname !== '/') {
+          router.push('/');
+        }
       }, 300);
     }
   };
@@ -45,6 +55,31 @@ const MobileMenu: FC<MobileMenuProps> = ({ isOpen, onClose, onToggle }) => {
     }, 300);
   };
   
+  // Use overflow class for body handling
+  useEffect(() => {
+    if (isOpen) {
+      // Prevent scrolling when menu is open
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.height = '100%';
+    } else {
+      // Re-enable scrolling when menu is closed
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.height = '';
+    }
+
+    // Cleanup when component unmounts
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.height = '';
+    };
+  }, [isOpen]);
+
   return (
     <div className={bodyClass}>
       <div className="md:hidden fixed top-4 right-4 w-12 h-12">
