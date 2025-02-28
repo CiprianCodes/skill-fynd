@@ -4,11 +4,11 @@ import { GridPattern, WavePattern } from '@/assets/svg';
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative pt-32 pb-40 overflow-hidden">
+    <section className="relative pt-4 md:pt-4 lg:pt-12 pb-40 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary to-background"></div>
         
-        <GridPattern className="absolute inset-0 opacity-10" />
+        <GridPattern className="absolute inset-0 top-0 opacity-10" />
         
         <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-purple-600 opacity-20 blur-[100px]"></div>
         <div className="absolute bottom-1/3 right-1/3 w-64 h-64 rounded-full bg-purple-500 opacity-10 blur-[80px]"></div>

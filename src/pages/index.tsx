@@ -19,7 +19,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Define site metadata that will be pre-rendered
 interface HomeProps {
   siteMetadata: {
     title: string;
@@ -53,13 +52,7 @@ export default function Home({ siteMetadata }: HomeProps) {
   );
 }
 
-/**
- * Static Site Generation (SSG) with optional revalidation
- * This pre-renders the page at build time for faster loading
- */
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
-  // In a real application, you might fetch data from an API or CMS here
-  // For this example, we're just using static data
   
   const siteMetadata = {
     title: 'Skill Fynd | Connecting Top Talent with Innovative Companies',
@@ -71,9 +64,6 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
     props: {
       siteMetadata
     },
-    // Optional: Enable Incremental Static Regeneration (ISR)
-    // This will update the static page after the specified seconds
-    // without needing to rebuild the entire site
-    revalidate: 3600, // Update every hour
+    revalidate: 3600,
   };
 };

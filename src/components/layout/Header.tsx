@@ -1,11 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Logo from '../ui/Logo';
 import Button from '../ui/Button';
 import MobileMenuSimple from '../mobile/MobileMenuSimple';
 
 const Header: React.FC = () => {
-  const headerClass = 'fixed w-full z-40 transition-all duration-300 bg-black/40 backdrop-blur-sm py-3 sm:py-4';
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const headerClass = `fixed w-full z-40 transition-all duration-300 ${
+    isScrolled 
+      ? 'bg-black/40 backdrop-blur-sm py-3 sm:py-4' 
+      : 'bg-transparent py-4 sm:py-6'
+  }`;
 
   return (
     <>
@@ -41,7 +60,7 @@ const Header: React.FC = () => {
         </div>
       </header>
 
-      <div className="h-[80px] transition-all duration-300"></div>
+      <div className={`transition-all duration-300 ${isScrolled ? 'h-[80px]' : 'h-[72px] sm:h-[76px] lg:h-[86px]'}`}></div>
       
       <div className="md:hidden">
         <MobileMenuSimple />

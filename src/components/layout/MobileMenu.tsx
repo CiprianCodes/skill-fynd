@@ -34,7 +34,6 @@ const MobileMenu: FC<MobileMenuProps> = ({ isOpen, onClose, onToggle }) => {
         window.location.hash = href.substring(1);
       }, 300);
     } else if (href === '/') {
-      // Handle home navigation - scroll to top and/or navigate to root
       setTimeout(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         if (router.pathname !== '/') {
@@ -55,23 +54,19 @@ const MobileMenu: FC<MobileMenuProps> = ({ isOpen, onClose, onToggle }) => {
     }, 300);
   };
   
-  // Use overflow class for body handling
   useEffect(() => {
     if (isOpen) {
-      // Prevent scrolling when menu is open
       document.body.style.overflow = 'hidden';
       document.body.style.position = 'fixed';
       document.body.style.width = '100%';
       document.body.style.height = '100%';
     } else {
-      // Re-enable scrolling when menu is closed
       document.body.style.overflow = '';
       document.body.style.position = '';
       document.body.style.width = '';
       document.body.style.height = '';
     }
 
-    // Cleanup when component unmounts
     return () => {
       document.body.style.overflow = '';
       document.body.style.position = '';
