@@ -215,7 +215,7 @@ This template is available for commercial and personal use.
 For questions or customization requests:
 
 - GitHub Repository: [https://github.com/CiprianCodes/skill-fynd](https://github.com/CiprianCodes/skill-fynd)
-- Live Demo: [https://skill-fynd-ximu.vercel.app/](https://skill-fynd-ximu.vercel.app/)
+- Live Demo: [https://skill-fynd-ximu.vercel.app/](https://skill-fynd.vercel.app)
 
 ---
 
