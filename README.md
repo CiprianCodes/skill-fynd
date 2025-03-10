@@ -6,7 +6,7 @@
 
 Skill Fynd is a cutting-edge, fully responsive landing page template designed for recruitment, talent acquisition, and professional services businesses. Built with scalability and performance in mind, this template features a sleek, professional design that can be easily customized to match your brand.
 
-🔗 **Live Demo:** [https://skill-fynd-ximu.vercel.app/](https://skill-fynd-ximu.vercel.app/)
+🔗 **Live Demo:** [https://skill-fynd-ximu.vercel.app/](https://skill-fynd.vercel.app/)
 
 ## ✨ Key Features
 
